@@ -1,6 +1,12 @@
 let boxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#reset-btn");
-let msg = document.querySelector(".winner");
+let msg = document.querySelector(".after-win");
+let container = document.querySelector(".container");
+let btn = document.querySelector("#reset-btn");
+
+let player1moves = 5;
+let player2moves = 4;
+let count = 0;
 
 let win = [
   [0, 1, 2],
@@ -29,7 +35,31 @@ let enableBoxes = () => {
 let resetGame = () => {
   turnX = true;
   enableBoxes();
+  player1moves = 5;
+  document.querySelector(
+    ".moves-left-player-1"
+  ).innerText = `Moves left : ${player1moves}`;
+  player2moves = 4;
+  document.querySelector(
+    ".moves-left-player-2"
+  ).innerText = `Moves left : ${player2moves}`;
+  btn.innerText = "Play Again";
+  container.classList.remove("hide");
   msg.classList.add("hide");
+};
+
+const updateMovesPlayer1 = () => {
+  player1moves--;
+  document.querySelector(
+    ".moves-left-player-1"
+  ).innerText = `Moves left : ${player1moves}`;
+};
+
+const updateMovesPlayer2 = () => {
+  player2moves--;
+  document.querySelector(
+    ".moves-left-player-2"
+  ).innerText = `Moves left : ${player2moves}`;
 };
 
 const checkWinner = () => {
@@ -40,9 +70,17 @@ const checkWinner = () => {
 
     if (pos1val != "" && pos2val != "" && pos3val != "") {
       if (pos1val === pos2val && pos2val === pos3val) {
-        msg.innerText = `Congratulations......Winner is TEAM ${pos1val}........`;
+        container.classList.add("hide");
         msg.classList.remove("hide");
+        btn.innerText = "New Game";
         disableBoxes();
+        if (pos1val === "X") {
+          document.querySelector(".after-win").innerText =
+            "Congratulations...Player 1 Wins...";
+        } else {
+          document.querySelector(".after-win").innerText =
+            "Congratulations...Player 2 Wins...";
+        }
       }
     }
   }
@@ -56,13 +94,31 @@ boxes.forEach((box) => {
     if (turnX) {
       box.innerText = "X";
       turnX = false;
+      updateMovesPlayer1();
     } else {
       box.innerText = "O";
       turnX = true;
+      updateMovesPlayer2();
     }
     box.disabled = "true";
     checkWinner();
+    checkEndGame();
   });
 });
 
 resetBtn.addEventListener("click", resetGame);
+
+const checkEndGame = () => {
+  for (let i = 0; i < 9; i++) {
+    if (boxes[i].innerText === "") {
+      count++;
+    }
+  }
+  if (count === 0) {
+    document.querySelector(".after-win").innerText = "OPPS!!! Start a new game!!!";
+    container.classList.add("hide");
+    msg.classList.remove("hide");
+    btn.innerText = "New Game";
+  }
+  count = 0;
+};

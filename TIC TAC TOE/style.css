@@ -5,15 +5,15 @@
 }
 
 :root {
-  --color: #ebfef9;
+  --color: #d5fff3;
   --font: #000;
-  --btn: #000e14;
+  --btn: #141400;
 }
 
 .dark-mode {
-  --color: #010a13;
+  --color: #0f110c;
   --font: #fff;
-  --btn: #9eccfa;
+  --btn: #144b26;
 }
 
 body {
@@ -46,7 +46,7 @@ body {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .reset {
@@ -58,10 +58,23 @@ body {
 #reset-btn {
   padding: 10px 25px 10px 25px;
   background-color: var(--btn);
-  color: var(--color);
+  color: #fff;
   font-size: 4vmin;
   padding: px;
   border-radius: 1rem;
   border: none;
   box-shadow: 10px 10px 5px var(--shadow);
+}
+
+#reset-btn:hover {
+  transform: scale(1.2);
+}
+
+.after-win {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30vmin 100px 30vmin 100px;
+  color: var(--font);
+  font-size: 4.5rem;
 }
