@@ -1,0 +1,37 @@
+:root {
+  --shadow: rgb(93, 105, 93);
+  --pallate: #e3fa7b;
+}
+
+.dark-mode {
+  --shadow: #000;
+  --pallate: #b091f8;
+}
+
+.container {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  height: 60vmin;
+  width: 60vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vmin;
+}
+
+.box {
+  height: 18vmin;
+  width: 18vmin;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 5px var(--shadow);
+  font-size: 8vmin;
+  background-color: var(--pallate);
+  color: #000;
+}

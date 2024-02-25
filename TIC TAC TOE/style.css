@@ -1,0 +1,67 @@
+* {
+  font-family: "Caveat", cursive;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color: #ebfef9;
+  --font: #000;
+  --btn: #000e14;
+}
+
+.dark-mode {
+  --color: #010a13;
+  --font: #fff;
+  --btn: #9eccfa;
+}
+
+body {
+  background-color: var(--color);
+  color: var(--font);
+}
+
+#space {
+  padding: 40px;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 8vmin;
+}
+
+#mode {
+  margin-right: 40px;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+}
+
+.winner {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.hide {
+  display: none;
+}
+
+.reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#reset-btn {
+  padding: 10px 25px 10px 25px;
+  background-color: var(--btn);
+  color: var(--color);
+  font-size: 4vmin;
+  padding: px;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 10px 10px 5px var(--shadow);
+}
