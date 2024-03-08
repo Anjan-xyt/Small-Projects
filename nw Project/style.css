@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Madimi One", sans-serif;
+  font-weight: 50;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background-color: #293132;
+  color: white;
+}
+
+.container {
+  background-color: #2b2729;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20vmin;
+  padding: 2vmin;
+  border: 8px solid black;
+  border-radius: 5px;
+  box-shadow: #151314 20px 20px 2px;
+}
+
+.box {
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  padding: 5px;
+  background-color: #2b2729;
+  color: white;
+  text-align: center;
+  outline-color: white;
+}
+
+.select-container {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #151314;
+  border: 2px solid rgb(4, 0, 0);
+}
+
+.small-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.small-box img {
+  height: 2rem;
+  max-width: 2rem;
+}
+
+.small-box select {
+  max-height: 1.5rem;
+}
+
+button {
+  background-color: #151314;
+  color: white;
+  margin: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+button:active {
+  background-color: black;
+}
